@@ -9,9 +9,14 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
-
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    // variables
+    var bird = SKSpriteNode() // player
+    var gameOverImage = SKSpriteNode() // game over image
+    let jumpSound = SKAction.playSoundFileNamed("sound.mp3", waitForCompletion: false) // jump sound
+    let backSound = SKAction.playSoundFileNamed("backSound.mp3", waitForCompletion: false) // background sound
     
+
     override func didMove(to view: SKView) {
         
         
