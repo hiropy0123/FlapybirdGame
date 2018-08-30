@@ -28,10 +28,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var timeString = String() // 結果を投稿するための文字列タイム
     
     
-    
 
     override func didMove(to view: SKView) {
         
+        // BGMを再生
+        self.run(backSound, withKey: "backSound")
+        self.run(jumpSound, withKey: "jumpSound")
+        createParts()
+        
+    }
+    
+    // オブジェクトの生成
+    func createParts() {
         
     }
     
