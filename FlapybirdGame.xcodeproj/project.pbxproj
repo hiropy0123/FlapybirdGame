@@ -15,6 +15,17 @@
 		AFE76A4E2138244B00F071FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A4C2138244B00F071FF /* Main.storyboard */; };
 		AFE76A502138244E00F071FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A4F2138244E00F071FF /* Assets.xcassets */; };
 		AFE76A532138244E00F071FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A512138244E00F071FF /* LaunchScreen.storyboard */; };
+		AFE76A7B2138265A00F071FF /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A702138265900F071FF /* bg@2x.png */; };
+		AFE76A7C2138265A00F071FF /* pipeTop.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A712138265900F071FF /* pipeTop.png */; };
+		AFE76A7D2138265A00F071FF /* pipeBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A722138265900F071FF /* pipeBottom.png */; };
+		AFE76A7E2138265A00F071FF /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A732138265900F071FF /* star.png */; };
+		AFE76A7F2138265A00F071FF /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A742138265900F071FF /* sound.mp3 */; };
+		AFE76A802138265A00F071FF /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A752138265900F071FF /* bg.png */; };
+		AFE76A812138265A00F071FF /* bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A762138265900F071FF /* bg@3x.png */; };
+		AFE76A822138265A00F071FF /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A772138265A00F071FF /* bird.png */; };
+		AFE76A832138265A00F071FF /* GameOverImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A782138265A00F071FF /* GameOverImage.jpg */; };
+		AFE76A842138265A00F071FF /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A792138265A00F071FF /* logo.png */; };
+		AFE76A852138265A00F071FF /* backSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A7A2138265A00F071FF /* backSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +39,17 @@
 		AFE76A4F2138244E00F071FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE76A522138244E00F071FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFE76A542138244E00F071FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFE76A702138265900F071FF /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		AFE76A712138265900F071FF /* pipeTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipeTop.png; sourceTree = "<group>"; };
+		AFE76A722138265900F071FF /* pipeBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipeBottom.png; sourceTree = "<group>"; };
+		AFE76A732138265900F071FF /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		AFE76A742138265900F071FF /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
+		AFE76A752138265900F071FF /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		AFE76A762138265900F071FF /* bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@3x.png"; sourceTree = "<group>"; };
+		AFE76A772138265A00F071FF /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		AFE76A782138265A00F071FF /* GameOverImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GameOverImage.jpg; sourceTree = "<group>"; };
+		AFE76A792138265A00F071FF /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		AFE76A7A2138265A00F071FF /* backSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +91,17 @@
 				AFE76A4F2138244E00F071FF /* Assets.xcassets */,
 				AFE76A512138244E00F071FF /* LaunchScreen.storyboard */,
 				AFE76A542138244E00F071FF /* Info.plist */,
+				AFE76A7A2138265A00F071FF /* backSound.mp3 */,
+				AFE76A752138265900F071FF /* bg.png */,
+				AFE76A702138265900F071FF /* bg@2x.png */,
+				AFE76A762138265900F071FF /* bg@3x.png */,
+				AFE76A772138265A00F071FF /* bird.png */,
+				AFE76A782138265A00F071FF /* GameOverImage.jpg */,
+				AFE76A792138265A00F071FF /* logo.png */,
+				AFE76A722138265900F071FF /* pipeBottom.png */,
+				AFE76A712138265900F071FF /* pipeTop.png */,
+				AFE76A742138265900F071FF /* sound.mp3 */,
+				AFE76A732138265900F071FF /* star.png */,
 			);
 			path = FlapybirdGame;
 			sourceTree = "<group>";
@@ -131,10 +164,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE76A812138265A00F071FF /* bg@3x.png in Resources */,
 				AFE76A4E2138244B00F071FF /* Main.storyboard in Resources */,
+				AFE76A822138265A00F071FF /* bird.png in Resources */,
+				AFE76A832138265A00F071FF /* GameOverImage.jpg in Resources */,
 				AFE76A452138244B00F071FF /* GameScene.sks in Resources */,
+				AFE76A852138265A00F071FF /* backSound.mp3 in Resources */,
+				AFE76A7E2138265A00F071FF /* star.png in Resources */,
 				AFE76A502138244E00F071FF /* Assets.xcassets in Resources */,
+				AFE76A7F2138265A00F071FF /* sound.mp3 in Resources */,
+				AFE76A7B2138265A00F071FF /* bg@2x.png in Resources */,
+				AFE76A7D2138265A00F071FF /* pipeBottom.png in Resources */,
 				AFE76A532138244E00F071FF /* LaunchScreen.storyboard in Resources */,
+				AFE76A842138265A00F071FF /* logo.png in Resources */,
+				AFE76A7C2138265A00F071FF /* pipeTop.png in Resources */,
+				AFE76A802138265A00F071FF /* bg.png in Resources */,
 				AFE76A472138244B00F071FF /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
