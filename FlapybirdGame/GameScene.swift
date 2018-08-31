@@ -41,6 +41,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // オブジェクトの生成
     func createParts() {
         
+        let backView = SKSpriteNode(imageNamed: "bg.png")
+        backView.position = CGPoint(x: 0, y: 0)
+        // 背景画像の描画
+        backView.run(SKAction.repeatForever(SKAction.sequence([
+            // X方向に右から左へと背景が移動する
+            SKAction.moveTo(x: -self.size.width, duration: 13.0),
+            SKAction.moveTo(y: 0, duration: 0)
+            
+        ])))
+        
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
