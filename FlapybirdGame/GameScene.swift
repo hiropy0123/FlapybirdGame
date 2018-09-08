@@ -115,10 +115,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // ゲームオーバー画面
         let gameOverTexture = SKTexture(imageNamed: "GameOverImage.jpg")
         gameOverImage = SKSpriteNode(texture: gameOverTexture)
-        gameOverImage.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        gameOverImage.position = CGPoint(x: self.frame.midX, y: self.frame.midY) // 中心揃えに配置
         gameOverImage.zPosition = 11
         self.addChild(gameOverImage)
         gameOverImage.isHidden = true
+        
+        
+        // Player Bird
+        let birdTexture = SKTexture(imageNamed: "bird.png")
+        bird = SKSpriteNode(texture: birdTexture)
+        bird.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        // physics追加
+        bird.physicsBody = SKPhysicsBody(circleOfRadius: bird.size.height/2) // birdに衝突判定のコライダー追加。円形のコライダー。半径がbirdの高さの半分の円。
+        bird.physicsBody?.isDynamic = true // birdはダイナミック 動的な物体
+        bird.physicsBody?.allowsRotation = false // birdは回転しない
+        
+        
+        
         
         
     }
