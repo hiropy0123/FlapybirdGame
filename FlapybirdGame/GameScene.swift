@@ -174,8 +174,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let gap = bird.size.height * 3
         let pipeTopTexture    = SKTexture(imageNamed: "pipeTop.png")
         pipeTop = SKSpriteNode(texture: pipeTopTexture)
-        
-        
+        pipeTop.position = CGPoint(
+            x: self.frame.midX + self.frame.width/2,
+            y: self.frame.midY + pipeTop.size.height/2 + gap/2 + offset
+        )
+        pipeTop.physicsBody = SKPhysicsBody(rectangleOf: pipeTop.size) // パイプのカタチをパイプの大きさの長方形にする
+        pipeTop.physicsBody?.isDynamic = false // パイプは衝突しても動かない
     }
     
     @objc func updateScore() {
