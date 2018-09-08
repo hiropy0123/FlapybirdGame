@@ -145,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ground.physicsBody?.categoryBitMask = 2
         blockingObjects.addChild(ground)
         
-        // パイプの作成
+        // タイマーを回す
         timer = Timer.scheduledTimer(
             timeInterval: 4,
             target: self,
@@ -154,10 +154,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             repeats: true
         )
         
+        gameTimer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(updateScore),
+            userInfo: nil,
+            repeats: true
+        )
+        
         
     }
     
     @objc func createPipe() {
+        // パイプを生成
+    }
+    
+    @objc func updateScore() {
+        // スコアを更新
+        score += 1
+        scoreLabel.text = "\(score)"
         
     }
     
