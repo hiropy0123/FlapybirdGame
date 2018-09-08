@@ -129,7 +129,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bird.physicsBody = SKPhysicsBody(circleOfRadius: bird.size.height/2) // birdに衝突判定のコライダー追加。円形のコライダー。半径がbirdの高さの半分の円。
         bird.physicsBody?.isDynamic = true // birdはダイナミック 動的な物体
         bird.physicsBody?.allowsRotation = false // birdは回転しない
+        bird.physicsBody?.categoryBitMask = 1
+        bird.physicsBody?.collisionBitMask = 2
+        bird.physicsBody?.contactTestBitMask = 2
+        bird.zPosition = 10
         
+        self.addChild(bird)
+        
+        
+        // 地面
+        let ground = SKNode()
+        ground.position = CGPoint(x: -325, y: -700)
         
         
         
