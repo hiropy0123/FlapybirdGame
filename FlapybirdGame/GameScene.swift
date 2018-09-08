@@ -167,6 +167,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     @objc func createPipe() {
         // パイプを生成
+        
+        // 乱数の作成
+        let randomLength = arc4random() % UInt32(self.size.height/2)
+        let offset = CGFloat(randomLength) - self.frame.size.height/4
+        let gap = bird.size.height * 3
+        let pipeTopTexture    = SKTexture(imageNamed: "pipeTop.png")
+        pipeTop = SKSpriteNode(texture: pipeTopTexture)
+        
+        
     }
     
     @objc func updateScore() {
