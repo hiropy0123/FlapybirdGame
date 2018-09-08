@@ -51,6 +51,53 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         ])))
         
+        // 背景を反映させる
+        self.addChild(backView)
+        
+        
+        // 背景を複製して2つ作成
+        let backView2 = SKSpriteNode(imageNamed: "bg.png")
+        backView2.position = CGPoint(x: 0, y: 0)
+        // 背景画像の描画
+        backView2.run(SKAction.repeatForever(SKAction.sequence([
+        // X方向に右から左へと背景が移動する
+        SKAction.moveTo(x: 0, duration: 13.0),
+        SKAction.moveTo(y: -self.size.width, duration: 0)
+        
+        ])))
+        
+        // 背景を反映させる
+        self.addChild(backView2)
+        
+        // 初期化
+        bird = SKSpriteNode() // 一番上で定義しているからいらないかも？
+        gameOverImage = SKSpriteNode() // 一番上で定義しているからいらないかも？
+        blockingObjects = SKSpriteNode() // 一番上で定義しているからいらないかも？ SKNode()じゃないの？
+        
+        // スコア
+        score = Int(0) // 一番上で定義しているからいらないかも？
+        scoreLabel = SKLabelNode() // 一番上で定義しているからいらないかも？
+        scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
+        scoreLabel.color = UIColor.white
+        scoreLabel.text = "\(score)" // キャスト 数値→文字列
+        scoreLabel.zPosition = 14
+        scoreLabel.fontSize = 50
+        scoreLabel.fontName = "HelveticaNeue-Bold"
+        
+        // スコア背景
+        let scoreBg = SKShapeNode()
+        scoreBg.position = CGPoint(x: 0, y: 0)
+        scoreBg.path = CGPath(
+            roundedRect: CGRect(x: CGFloat(-50), y: CGFloat(-30), width: CGFloat(100), height: CGFloat(100)),
+            cornerWidth: 50,
+            cornerHeight: 50,
+            transform: nil
+        )
+        let scoreBgColor = UIColor.gray
+        scoreBg.strokeColor = UIColor.clear
+        scoreBg.fillColor = scoreBgColor
+        scoreBg.zPosition = 13
+        scoreLabel.addChild(scoreBg)
         
     }
     
