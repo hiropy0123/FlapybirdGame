@@ -141,8 +141,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let ground = SKNode()
         ground.position = CGPoint(x: -325, y: -700)
         
+        ground.physicsBody?.isDynamic = false // 地面は動かない
+        ground.physicsBody?.categoryBitMask = 2
+        blockingObjects.addChild(ground)
+        
+        // パイプの作成
+        timer = Timer.scheduledTimer(
+            timeInterval: 4,
+            target: self,
+            selector: #selector(createPipe),
+            userInfo: nil,
+            repeats: true
+        )
         
         
+    }
+    
+    @objc func createPipe() {
         
     }
     
