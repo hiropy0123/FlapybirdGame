@@ -99,6 +99,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreBg.zPosition = 13
         scoreLabel.addChild(scoreBg)
         
+        // タイマーの初期化
+        timer = Timer()
+        gameTimer = Timer()
+        
+        // ゲーム内の物理世界
+        self.physicsWorld.contactDelegate = self // SKPhysicsContactDelegate のデリゲートメソッド
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -6)
+        
+        // Game再スタートのための初期化
+        blockingObjects.removeAllChildren()
+        gameOverImage = SKSpriteNode()
+        self.addChild(blockingObjects)
+        
+        // ゲームオーバー画面
+        
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
