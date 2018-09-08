@@ -113,6 +113,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(blockingObjects)
         
         // ゲームオーバー画面
+        let gameOverTexture = SKTexture(imageNamed: "GameOverImage.jpg")
+        gameOverImage = SKSpriteNode(texture: gameOverTexture)
+        gameOverImage.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        gameOverImage.zPosition = 11
+        self.addChild(gameOverImage)
+        gameOverImage.isHidden = true
         
         
     }
