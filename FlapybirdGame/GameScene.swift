@@ -21,7 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = Int(0) // スコア（タイマーの計算）
     var scoreLabel = SKLabelNode() // スコア表示
     var pipeTop = SKSpriteNode() // 上の障害物
-//    var pipeBottom = SKSpriteNode() // 下の障害物
+    var pipeBottom = SKSpriteNode() // 下の障害物
     
     var timer: Timer = Timer() // 背景画像を動かすためのタイマー
     var gameTimer: Timer = Timer() // ゲームの進行を管理するタイマー
@@ -166,7 +166,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     @objc func createPipe() {
-        // パイプを生成
+        // パイプを生成 上のパイプ
         
         // 乱数の作成
         let randomLength = arc4random() % UInt32(self.size.height/2)
@@ -180,6 +180,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         )
         pipeTop.physicsBody = SKPhysicsBody(rectangleOf: pipeTop.size) // パイプのカタチをパイプの大きさの長方形にする
         pipeTop.physicsBody?.isDynamic = false // パイプは衝突しても動かない
+        
+        pipeTop.physicsBody?.categoryBitMask = 2
+        blockingObjects.addChild(pipeTop)
+        
+        
+        // パイプを生成 下のパイプ
+        let pipeBottomTexture    = SKTexture(imageNamed: "pipeBottom.png")
+        pipeBottom = SKSpriteNode(texture: pipeBottomTexture)
+        pipeBottom.position = CGPoint(
+            x: self.frame.midX + self.frame.width/2,
+            y: self.frame.midY - pipeBottom.size.height/2 - gap/2 + offset
+        )
+        pipeBottom.physicsBody = SKPhysicsBody(rectangleOf: pipeBottom.size) // パイプのカタチをパイプの大きさの長方形にする
+        pipeBottom.physicsBody?.isDynamic = false // パイプは衝突しても動かない
+        
+        pipeBottom.physicsBody?.categoryBitMask = 2
+        blockingObjects.addChild(pipeBottom)
+        
+        
     }
     
     @objc func updateScore() {
