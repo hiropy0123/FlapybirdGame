@@ -238,7 +238,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // BGMの停止
         self.removeAction(forKey: "backSound")
         self.removeAction(forKey: "jumpSound")
+
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        if gameOverImage.isHidden == false {
+            // gameOverImageが表示されているので、ゲームオーバー時にタップした場合
+            
+            gameOverImage.isHidden = true
+            bird.removeFromParent()
+            createParts()
+            
+        } else {
+            // 通常のゲームプレイ時にタップした場合
+            // プレイヤーが跳ねる
+            bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 500)) // y軸方向(上方向)に500の速度を追加
+            run(jumpSound) // BGMのjumpSoundを鳴らす
+        }
         
     }
     
