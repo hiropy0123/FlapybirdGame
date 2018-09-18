@@ -165,6 +165,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    @objc func updateScore() {
+        // スコアを更新
+        score += 1
+        scoreLabel.text = "\(score)"
+        
+    }
+    
     @objc func createPipe() {
         // パイプを生成 上のパイプ
         
@@ -172,7 +179,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let randomLength = arc4random() % UInt32(self.size.height/2)
         let offset = CGFloat(randomLength) - self.frame.size.height/4
         let gap = bird.size.height * 3
-        let pipeTopTexture    = SKTexture(imageNamed: "pipeTop.png")
+        let pipeTopTexture = SKTexture(imageNamed: "pipeTop.png")
         pipeTop = SKSpriteNode(texture: pipeTopTexture)
         pipeTop.position = CGPoint(
             x: self.frame.midX + self.frame.width/2,
@@ -186,7 +193,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         // パイプを生成 下のパイプ
-        let pipeBottomTexture    = SKTexture(imageNamed: "pipeBottom.png")
+        let pipeBottomTexture = SKTexture(imageNamed: "pipeBottom.png")
         pipeBottom = SKSpriteNode(texture: pipeBottomTexture)
         pipeBottom.position = CGPoint(
             x: self.frame.midX + self.frame.width/2,
@@ -198,13 +205,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pipeBottom.physicsBody?.categoryBitMask = 2
         blockingObjects.addChild(pipeBottom)
         
+        // Action
+        let pipeMove = SKAction.moveBy(x: -self.frame.size.width - 70 , y: 0, duration: 4)
+        pipeTop.run(pipeMove)
+        pipeBottom.run(pipeMove)
         
     }
     
-    @objc func updateScore() {
-        // スコアを更新
-        score += 1
-        scoreLabel.text = "\(score)"
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        blockingObjects.speed = 0
+        gameOverImage.isHidden = false // 表示する
+        timer.invalidate()
+        gameTimer.invalidate()
+        score = 0
+        scoreLabel.removeAllChildren()
+        blockingObjects.removeAllActions()
+        blockingObjects.removeAllChildren()
+        
+        // UserDefaultsを用いてアプリ内にデータを保存
+        let ud = UserDefaults.standard
+        self.timeString = ud.object(forKey: "saveData") as! String
+        
+        // timeStringとscoreLabelを比較して、scoreLabelの方が大きければ、scoreLabelをUserDefaultsに保存
+        if Int(self.timeString)! < Int(scoreLabel.text!)! {
+            
+            ud.set(scoreLabel.text!, forKey: "saveData")
+            
+        }
+        
+        // BGMの停止
+        self.removeAction(forKey: "backSound")
+        self.removeAction(forKey: "jumpSound")
+        
         
     }
     
