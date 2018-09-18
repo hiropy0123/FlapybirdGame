@@ -26,6 +26,7 @@
 		AFE76A832138265A00F071FF /* GameOverImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A782138265A00F071FF /* GameOverImage.jpg */; };
 		AFE76A842138265A00F071FF /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A792138265A00F071FF /* logo.png */; };
 		AFE76A852138265A00F071FF /* backSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AFE76A7A2138265A00F071FF /* backSound.mp3 */; };
+		AFF80A2821513F2000951A0A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF80A2721513F2000951A0A /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AFE76A782138265A00F071FF /* GameOverImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GameOverImage.jpg; sourceTree = "<group>"; };
 		AFE76A792138265A00F071FF /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		AFE76A7A2138265A00F071FF /* backSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backSound.mp3; sourceTree = "<group>"; };
+		AFF80A2721513F2000951A0A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				AFE76A462138244B00F071FF /* Actions.sks */,
 				AFE76A482138244B00F071FF /* GameScene.swift */,
 				AFE76A4A2138244B00F071FF /* GameViewController.swift */,
+				AFF80A2721513F2000951A0A /* StartViewController.swift */,
 				AFE76A4C2138244B00F071FF /* Main.storyboard */,
 				AFE76A4F2138244E00F071FF /* Assets.xcassets */,
 				AFE76A512138244E00F071FF /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE76A492138244B00F071FF /* GameScene.swift in Sources */,
+				AFF80A2821513F2000951A0A /* StartViewController.swift in Sources */,
 				AFE76A4B2138244B00F071FF /* GameViewController.swift in Sources */,
 				AFE76A432138244B00F071FF /* AppDelegate.swift in Sources */,
 			);
