@@ -9,11 +9,27 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    
+    var timeString = String()
 
+    @IBOutlet var logoImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let ud = UserDefaults.standard
+        
+        if ud.object(forKey: "saveData") == nil {
+            ud.set("0", forKey: "saveData")
+        }
+        
+        self.timeString = ud.object(forKey: "saveData") as! String
+        
+        UIView.animate(withDuration: 2.0, animations: {
+            self.logoImageView.frame = CGRect(x: 16, y: 143, width: 343, height: 343)
+        }, completion: nil)
+        
+        
     }
     
 
