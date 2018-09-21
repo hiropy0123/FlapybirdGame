@@ -94,6 +94,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             transform: nil
         )
         let scoreBgColor = UIColor.gray
+        scoreBg.alpha = 0.5
         scoreBg.strokeColor = UIColor.clear
         scoreBg.fillColor = scoreBgColor
         scoreBg.zPosition = 13
