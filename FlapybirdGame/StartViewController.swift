@@ -73,6 +73,14 @@ class StartViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "gameVC") as! GameViewController
+        
+        self.navigationController?.pushViewController(gameVC, animated: true)
+        
+    }
+    
 
     /*
     // MARK: - Navigation
